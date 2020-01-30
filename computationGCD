@@ -1,0 +1,44 @@
+# Code to comput GCD
+import numpy as np
+list1=[]
+list2=[]
+cf=[]
+max=[]  
+n=int(input("enter the first number:"))     
+m=int(input("enter the second number:"))          
+
+#Use list1 and list2 for list of factors of m and n respectively.
+def first(n,list1,list2,m):
+   for i in range(1,n+1):
+       if(n%i)==0:
+         list1.append(i)
+         
+    
+   for j in range(1,m+1):
+       if(m%j)==0:
+         list2.append(j)
+         
+       
+   return(list1,list2)
+
+#Use cf as list for common factors.
+def compare(list1,list2,cf):
+    for i in range(len(list1)):
+        for j in range(len(list2)):
+            if(list1[i]==list2[j]):
+                cf.append(list1[i])
+    return(cf)
+    
+    
+print(first(n,list1,list2,m))
+print(compare(list1,list2,cf))
+
+#Returns the largest value in cf.
+def largest(cf):
+    
+    return(np.max(cf))
+    
+print("the gcd of two numbers are",largest(cf))
+
+                
+                
